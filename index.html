@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Смешной сайт 😎</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #ff7eb3, #65d6ce, #ffd166);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    background: white;
+    padding: 40px;
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+    width: 320px;
+}
+
+h1 {
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 30px;
+    background: #ff4d6d;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.1);
+    background: #e63950;
+}
+
+#joke {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #333;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+    <h1>😂 Генератор шуток</h1>
+    <p>Нажми кнопку — получи анекдот</p>
+
+    <button onclick="newJoke()">Смеши меня</button>
+
+    <div id="joke"></div>
+</div>
+
+<script>
+const jokes = [
+    "Программист пошёл в магазин и купил 0.5 хлеба.",
+    "Почему HTML не дерётся? Потому что он тегает.",
+    "CSS — это когда двигаешь кнопку 3 часа.",
+    "JavaScript — работает… пока не спросишь почему.",
+    "Сначала учишь код, потом код учит тебя жизни 😅"
+];
+
+function newJoke() {
+    const random = Math.floor(Math.random() * jokes.length);
+    document.getElementById("joke").innerText = jokes[random];
+}
+</script>
+
+</body>
+</html>
